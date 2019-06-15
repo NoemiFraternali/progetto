@@ -17,8 +17,21 @@ public class Fotografo {
 	private String nome;
 	private String cognome;
 	
-	@OneToMany(mappedBy="fotografo")
+	@OneToMany(mappedBy="fotografoAlbum", cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
 	private List<Album> album;
+	
+	@OneToMany(mappedBy="fotografo")
+	private List<Fotografia>fotografie;
+	
+	
+	
+	public Fotografo(Long id, String nome, String cognome, String email) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.cognome = cognome;
+		this.email=email;
+	}
 
 	public Long getId() {
 		return id;
