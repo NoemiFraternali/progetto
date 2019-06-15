@@ -12,6 +12,10 @@ import javax.persistence.OneToMany;
 @Entity
 public class Album {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	@Column(nullable=false)
 	public String nome;
 	private Date dataPubblicazione;
 	
@@ -19,7 +23,18 @@ public class Album {
 	private Fotografo fotografo;
 	
 	@OneToMany(fetch = FetchType.EAGER)
+	@JoinColumn(name="album_id")
 	private List<Fotografia> fotografieAlbum;
+	
+	public Album(Long id, String nome, Date dataPubblicazione, Fotografo fotografoAlbum) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.dataPubblicazione = dataPubblicazione;
+		this.fotografoAlbum = fotografoAlbum;
+	}
+
+	
 
 	public List<Fotografia> getFotografie() {
 		return fotografieAlbum;
@@ -27,6 +42,14 @@ public class Album {
 
 	public void setFotografie(List<Fotografia> fotografie) {
 		this.fotografieAlbum = fotografie;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNome() {
