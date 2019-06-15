@@ -23,6 +23,15 @@ public class Fotografia {
 	@ManyToOne
 	private Fotografo fotografo;
 
+	public Fotografia(Long id, String categoria, float prezzo, Album album, Fotografo fotografo) {
+		super();
+		this.id = id;
+		this.categoria = categoria;
+		this.prezzo = prezzo;
+		this.album = album;
+		this.fotografo = fotografo;
+	}
+
 	public Long getId() {
 		return id;
 	}
