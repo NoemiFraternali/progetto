@@ -6,6 +6,7 @@ import org.springframework.validation.Validator;
 
 import it.uniroma3.siw.model.Fotografo;
 
+@Component
 public class FotografiaValidator implements Validator{
 	
 	@Override
