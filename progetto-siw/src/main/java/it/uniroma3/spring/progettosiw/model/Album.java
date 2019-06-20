@@ -15,7 +15,6 @@ public class Album {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	@Column(nullable=false)
 	public String nome;
 	private Date dataPubblicazione;
 	
@@ -23,7 +22,6 @@ public class Album {
 	private Fotografo fotografo;
 	
 	@OneToMany(fetch = FetchType.EAGER)
-	@JoinColumn(name="album_id")
 	private List<Fotografia> fotografieAlbum;
 	
 	public Album(Long id, String nome, Date dataPubblicazione, Fotografo fotografoAlbum) {
