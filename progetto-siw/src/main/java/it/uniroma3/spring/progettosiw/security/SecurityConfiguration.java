@@ -19,7 +19,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		//chi puo accedere
 		http
 		.authorizeRequests()
-		.antMatchers(HttpMethod.GET, "/index", "/fotografi", "/fotografo","/richiesteUtilizzoForm", "/album").permitAll() 
+		.antMatchers(HttpMethod.GET, "/", "it/index", "/fotografi", "/fotografo","/richiesteUtilizzoForm", "/album").permitAll() 
 		.antMatchers(HttpMethod.GET, "/amministratore", "/richiesteUtilizzo", "/loginAmministratore", "/albumForm", "/fotografoForm", "/addFoto", "/addFoto2").hasAnyAuthority("ADMIN") 
 		.anyRequest().authenticated()
 
