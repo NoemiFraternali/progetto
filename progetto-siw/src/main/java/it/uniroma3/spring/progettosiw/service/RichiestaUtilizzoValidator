@@ -6,6 +6,7 @@ import org.springframework.validation.Validator;
 
 import it.uniroma3.siw.model.RichiestaUtilizzo;
 
+@Component
 public class RichiestaUtilizzoValidator implements Validator{
 	
 	@Override
