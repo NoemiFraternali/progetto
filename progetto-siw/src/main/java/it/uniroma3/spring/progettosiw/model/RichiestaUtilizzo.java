@@ -24,7 +24,7 @@ public class RichiestaUtilizzo {
 	private LocalDate data;
 	
 	@OneToMany(cascade=CascadeType.PERSIST)
-	private List<Fotografia>foto;
+	private List<Fotografia>fotografie;
 
 	public RichiestaUtilizzo(Long id, String nome, String cognome, String email) {
 		super();
@@ -75,12 +75,12 @@ public class RichiestaUtilizzo {
 		this.data = data;
 	}
 
-	public List<Fotografia> getFoto() {
-		return foto;
+	public List<Fotografia> getFotografie() {
+		return fotografie;
 	}
 
-	public void setFoto(List<Fotografia> foto) {
-		this.foto = foto;
+	public void setFotografie(List<Fotografia> fotografie) {
+		this.fotografie = fotografie;
 	}
 	
 	
