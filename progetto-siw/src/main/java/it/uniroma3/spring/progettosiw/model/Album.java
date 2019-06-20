@@ -19,9 +19,9 @@ public class Album {
 	private Date dataPubblicazione;
 	
 	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE})
-	private Fotografo fotografo;
+	private Fotografo fotografoAlbum;
 	
-	@OneToMany(fetch = FetchType.EAGER)
+	@OneToMany(cascade= {CascadeType.PERSIST, CascadeType.REMOVE}, fetch=FetchType.EAGER)
 	private List<Fotografia> fotografieAlbum;
 	
 	public Album(Long id, String nome, Date dataPubblicazione, Fotografo fotografoAlbum) {
