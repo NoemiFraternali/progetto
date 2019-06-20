@@ -12,7 +12,6 @@ public class Utente {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	@Column(nullable=false)
 	private String usernme;
 	private String password;
 	private String email;
