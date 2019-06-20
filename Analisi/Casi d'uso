@@ -1,1 +1,33 @@
+Caso d’uso: Richiesta di utilizzo.
+Attore primario: L’amministratore dell’agenzia SILPH SPA.
+1.	L’amministratore vuole visualizzare le richieste di utilizzo.
+2.	L’amministratore inserisce l’email e la password. Il sistema verifica la correttezza dei dati e autentica l’amministratore.
+3.	L’amministratore sceglie di visualizzare le richieste di utilizzo. La piattaforma apre l'elenco delle richieste di utilizzo.
+4.	L’amministratore seleziona l'id di una richiesta. La piattaforma apre i dettagli della richiesta.
+Varianti:
+2.(a) Se le credenziali dell’amministratore non sono convalidate, il sistema termina l’esecuzione.
+
+
+Caso d’uso: L’utente visita la piattaforma.
+Attore primario: Un utente.
+1.	L’utente sceglie di richiedere l’utilizzo di una o più fotografie. La piattaforma apre l’elenco dell’album, dei fotografi e delle fotografie .
+2.	L’utente cliccando su “aggiungi foto” seleziona le foto relative ad uno specifico album di un fotografo.
+3.	L’utente seleziona una foto. Quindi la piattaforma apre la foto selezionata. 
+4.	La piattaforma mostra un riepilogo della richiesta di utilizzo.
+5.	L’utente inserisce le proprie credenziali: nome, cognome, email.
+6.	L’utente conferma la richiesta di utilizzo. L’amministratore può vedere la richiesta di utilizzo eseguita dall’utente.
+
+
+Caso d’uso: Inserimento nuovo fotografo.
+Attore primario: Amministratore dell’agenzia SIPLH SPA.
+1.	L’amministratore vuole inserire un nuovo  fotografo nella piattaforma.
+2.	L’amministratore inserisce l’email e la password. Il sistema verifica le credenziali e autentica l’amministratore.
+3.	La piattaforma mostra nome e cognome dell’amministratore e le attività che può effettuare l’amministratore.
+4.	L’amministratore inserisce un nuovo fotografo. Inserisce nome, cognome, ed email del nuovo fotografo.
+5.	La piattaforma registra le informazioni sul fotografo.
+6.	La piattaforma mostra un riepilogo delle informazioni sul fotografo inserito.
+7.	L’amministratore conferma l'inserimento del fotografo. Il Sistema registra tutte le informazioni.
+Varianti:
+2.(a) Se le credenziali dell’amministratore non vengono convalidate, il sistema termina l'esecuzione dell’inserimento del nuovo fotografo.
+4.(a) Se l’amministratore annulla l'operazione d'inserimento, il sistema non registra nessuna informazione sul fotografo. 
 
