@@ -16,6 +16,8 @@ public class Fotografo {
 	private Long id;
 	private String nome;
 	private String cognome;
+	private String email;
+	
 	
 	@OneToMany(mappedBy="fotografoAlbum", cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
 	private List<Album> album;
@@ -32,7 +34,18 @@ public class Fotografo {
 		this.cognome = cognome;
 		this.email=email;
 	}
+	
+	public Fotografo(){
+		super();
+	}
 
+	public List<Fotografia> getFotografie() {
+		return fotografie;
+	}
+
+	public void setFotografie(List<Fotografia> fotografie) {
+		this.fotografie = fotografie;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -56,7 +69,14 @@ public class Fotografo {
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
+	
+	public String getEmail() {
+		return email;
+	}
 
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public List<Album> getAlbum() {
 		return album;
 	}
