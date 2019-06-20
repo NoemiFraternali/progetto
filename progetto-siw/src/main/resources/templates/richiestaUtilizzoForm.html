@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SilphSpa</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato"
+	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet" type="text/css">
+<link href="stile.css" rel="stylesheet" type="text/css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar"
+	data-offset="50">
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand">SilphSpa</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/">Home</a></li>
+					<li><a href="/fotografi">Fotografi</a></li>
+					<li><a href="/album">Album</a></li>
+					<li><a href="/fotografie">Fotografie</a></li>
+					<li><a href="/loginAmministratore">Area Amministratore</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+<body>
+	<div>
+		<h4>Nuova Richiesta di utilizzo: inserisci i tuoi dati</h4>
+
+	</div>
+	<br>
+	<br>
+	<br>
+
+	<form th:action="@{/richiestaUtilizzo}" method="POST" th:object="${richiestaUtilizzo}">
+		<table>
+			<tr>
+
+				<td>Nome</td>
+				<td><input type="text" th:field="*{nome}" /></td>
+				<!-- stampa errori se ci sono -->
+				<td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></td>
+
+			</tr>
+
+			<tr>
+
+				<td>Cognome</td>
+				<td><input type="text" th:field="*{cognome}" /></td>
+				<td th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></td>
+
+
+			</tr>
+			
+			<tr>
+
+				<td>Email</td>
+				<td><input type="text" th:field="*{email}" /></td>
+				<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></td>
+
+
+			</tr>
+			
+			<tr>
+
+				<td>Data</td>
+				<td><input type="text" th:field="*{data}" /></td>
+				<td th:if="${#fields.hasErrors('data')}" th:errors="*{data}"></td>
+
+
+			</tr>
+			
+			<tr>
+				<td>
+					<button type="submit">Invio</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
