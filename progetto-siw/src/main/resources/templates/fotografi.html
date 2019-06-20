@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>SilphSpa</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Lato"
+	rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat"
+	rel="stylesheet" type="text/css">
+<link href="stile.css" rel="stylesheet" type="text/css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar"
+	data-offset="50">
+
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand">SilphSpa</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/">Home</a></li>
+					<li><a href="/fotografi">Fotografi</a></li>
+					<li><a href="/album">Album</a></li>
+					<li><a href="/fotografie">Fotografie</a></li>
+					<li><a href="/loginAmministratore">Area Amministratore</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br>
+	<br>
+	<br>
+	<br>
+	<h4>Fotografi</h4>
+			
+			<li th:each="fotografo : ${fotografi}">
+				
+				<!-- Viene stampato un link --> <!-- Il link lo costruiamo noi, con il nome dello studente,
+				abbiamo indicato che sia il controller a gestire la richiesta con una get -->
+				<!-- al posto di noemi (valore fittizio) compare ciò che ho specificato in th:text-->
+				
+				<a 
+				th:href="@{'/fotografo' +'/'+ ${fotografo.id}}"
+				th:text="${fotografo.cognome}"></a>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
