@@ -16,6 +16,8 @@ public class Fotografia {
 	private Long id;
 	private String titolo;
 	private float prezzo;
+	private String path;
+	
 	
 	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.REMOVE})
 	private Album album;
@@ -72,6 +74,13 @@ public class Fotografia {
 		this.fotografo = fotografo;
 	}
 	
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}	
 	
 
 }
